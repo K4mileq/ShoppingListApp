@@ -1,0 +1,35 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ShopingListApp.ViewModels"
+             xmlns:local="clr-namespace:ShopingListApp.Views"
+             x:Class="ShopingListApp.Views.MainPage"
+             Title="Lista Zakupów">
+	<ContentPage.BindingContext>
+		<vm:ShoppingListViewModel />
+	</ContentPage.BindingContext>
+
+	<ScrollView>
+		<VerticalStackLayout>
+			<CollectionView ItemsSource="{Binding Categories}">
+				<CollectionView.ItemTemplate>
+					<DataTemplate>
+						<StackLayout>
+							<Button Text="{Binding Name}"
+                                    Command="{Binding ToggleCategoryCommand}" />
+
+							<CollectionView IsVisible="{Binding IsExpanded}" ItemsSource="{Binding Products}">
+								<CollectionView.ItemTemplate>
+									<DataTemplate>
+										<local:ProductView BindingContext="{Binding}" />
+									</DataTemplate>
+								</CollectionView.ItemTemplate>
+							</CollectionView>
+						</StackLayout>
+					</DataTemplate>
+				</CollectionView.ItemTemplate>
+			</CollectionView>
+			<Button Text="Dodaj produkt" Command="{Binding AddProductCommand}" />
+			<Button Text="Dodaj kategorię" Command="{Binding AddCategoryCommand}" Style="{StaticResource PrimaryButtonStyle}" />
+		</VerticalStackLayout>
+	</ScrollView>
+</ContentPage>

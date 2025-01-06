@@ -1,0 +1,63 @@
+﻿/* Ogólny wygląd dla przycisków */
+button {
+    background-color: #4CAF50; /* Zielony */
+    color: white;
+    font-size: 16px;
+    padding: 10px 15px;
+    margin: 5px 0;
+    border-radius: 8px;
+    border: none;
+    text-align: center;
+}
+
+    button:pressed {
+        background-color: #45a049; /* Ciemniejszy zielony po kliknięciu */
+    }
+
+/* Styl dla pól tekstowych */
+entry {
+    border: 1px solid #ddd;
+    padding: 8px;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+/* Styl dla etykiet */
+label {
+    font-size: 16px;
+    color: #333;
+}
+
+/* Wygląd list i kontenerów */
+collectionview {
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Checkbox */
+checkbox {
+    margin-right: 10px;
+}
+
+/* Tekst dla produktów kupionych */
+label.purchased {
+    text-decoration: line-through;
+    font-style: italic;
+    color: gray;
+}
+
+/* Przyciski "+" i "-" */
+button.small {
+    background-color: #2196F3; /* Niebieski */
+    color: white;
+    font-size: 14px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 0 2px;
+}
+
+button.small:pressed {
+    background-color: #1e87e3; /* Ciemniejszy niebieski */
+}
