@@ -6,7 +6,7 @@
         {
             InitializeComponent();
 
-            // Ładowanie stylów CSS
+            
             Resources.Add(new StyleSheet
             {
                 Source = new Uri("Resources/Styles/styles.css", UriKind.Relative)
