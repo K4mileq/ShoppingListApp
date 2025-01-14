@@ -10,21 +10,21 @@ namespace ShopingListApp.Models
 
         public string Name { get; set; }
 
-        // Właściwość Quantity, która wywołuje OnPropertyChanged, gdy wartość się zmienia
+        
         public double Quantity
         {
             get => _quantity;
             set
             {
-                if (_quantity != value)  // Jeśli wartość się zmienia
+                if (_quantity != value)
                 {
                     _quantity = value;
-                    OnPropertyChanged(nameof(Quantity));  // Powiadamiamy o zmianie
+                    OnPropertyChanged(nameof(Quantity));
                 }
             }
         }
 
-        public string Unit { get; set; } // Jednostka miary: "szt", "l", "kg"
+        public string Unit { get; set; } 
         public string Category { get; set; }
 
         public bool IsPurchased
@@ -32,18 +32,18 @@ namespace ShopingListApp.Models
             get => _isPurchased;
             set
             {
-                if (_isPurchased != value)  // Jeśli wartość się zmienia
+                if (_isPurchased != value)
                 {
                     _isPurchased = value;
-                    OnPropertyChanged(nameof(IsPurchased));  // Powiadamiamy o zmianie
+                    OnPropertyChanged(nameof(IsPurchased)); 
                 }
             }
         }
 
-        // Zdarzenie PropertyChanged, które wywołuje powiadomienie o zmianach
+        
         public event PropertyChangedEventHandler PropertyChanged;
 
-        // Metoda wywołująca powiadomienie o zmianie właściwości
+        
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
