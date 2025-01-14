@@ -10,17 +10,15 @@
 
 	<ScrollView>
 		<VerticalStackLayout>
-			<CollectionView ItemsSource="{Binding Categories}">
+			<CollectionView ItemsSource="{Binding Categories}" BackgroundColor="#666666">
 				<CollectionView.ItemTemplate>
 					<DataTemplate>
 						<StackLayout>
-							<Button Text="{Binding Name}"
-                                    Command="{Binding ToggleCategoryCommand}" />
-
+							<Button Text="{Binding Name}" Command="{Binding ToggleCategoryCommand}" Style="{StaticResource CategoryButtonStyle}"/>
 							<CollectionView IsVisible="{Binding IsExpanded}" ItemsSource="{Binding Products}">
 								<CollectionView.ItemTemplate>
 									<DataTemplate>
-										<local:ProductView BindingContext="{Binding}" />
+										<local:ProductView BindingContext="{Binding}"/>
 									</DataTemplate>
 								</CollectionView.ItemTemplate>
 							</CollectionView>
@@ -28,8 +26,8 @@
 					</DataTemplate>
 				</CollectionView.ItemTemplate>
 			</CollectionView>
-			<Button Text="Dodaj produkt" Command="{Binding AddProductCommand}" />
-			<Button Text="Dodaj kategorię" Command="{Binding AddCategoryCommand}" Style="{StaticResource PrimaryButtonStyle}" />
+			<Button Text="Dodaj produkt" Command="{Binding AddProductCommand}" Style="{StaticResource AddButtonStyle}"/>
+			<Button Text="Dodaj kategorie" Command="{Binding AddCategoryCommand}" Style="{StaticResource AddButtonStyle}"/>
 		</VerticalStackLayout>
 	</ScrollView>
 </ContentPage>

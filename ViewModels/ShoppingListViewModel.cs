@@ -23,7 +23,7 @@ namespace ShopingListApp.ViewModels
             AddProductCommand = new Command(OpenAddProductPage);
             AddCategoryCommand = new Command(OpenAddCategoryPage);
 
-            
+            // Inicjalizacja kategorii
             Categories.Add(new CategoryViewModel
             {
                 Name = "Nabiał",
@@ -65,7 +65,7 @@ namespace ShopingListApp.ViewModels
                 }
             });
 
-            
+            // Załaduj dane z pliku XML
             LoadFromXml();
 
         }
@@ -122,7 +122,9 @@ namespace ShopingListApp.ViewModels
                 Categories.Add(new CategoryViewModel
                 {
                     Name = category.Name,
-                    Products = new ObservableCollection<Product>(category.Products)
+                    Products = new ObservableCollection<Product>(
+                        category.Products.OrderBy(p => p.IsPurchased)
+                    )
                 });
             }
         }

@@ -8,7 +8,7 @@
         <CollectionView ItemsSource="{Binding Products}" IsVisible="{Binding IsExpanded}">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <local:ProductView BindingContext="{Binding}" />
+                    <local:ProductView BindingContext="{Binding}"/>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
         </CollectionView>

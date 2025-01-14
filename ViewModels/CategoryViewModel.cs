@@ -26,25 +26,25 @@ namespace ShopingListApp.ViewModels
             }
         }
 
-        
+        // Sprawdza, czy kategoria ma produkty
         public bool HasProducts => Products?.Count > 0;
 
-        
+        // Komenda do prze³¹czania rozwiniêcia kategorii
         public Command ToggleCategoryCommand { get; }
 
         public CategoryViewModel()
         {
-           
+            // Przypisanie komendy do toggle'owania kategorii
             ToggleCategoryCommand = new Command(ToggleCategory);
         }
 
-        
+        // Metoda do prze³¹czania stanu rozwiniêcia/zwiniêcia
         private void ToggleCategory()
         {
             IsExpanded = !IsExpanded;
         }
 
-        
+        // Tylko jedno zdarzenie PropertyChanged w klasie
         public event PropertyChangedEventHandler PropertyChanged;
 
         protected void OnPropertyChanged([CallerMemberName] string propertyName = null)

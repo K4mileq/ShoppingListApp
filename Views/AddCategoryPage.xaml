@@ -10,7 +10,7 @@
 
     <StackLayout Padding="10">
         <Entry  Text="{Binding CategoryName, Mode=TwoWay}" Placeholder="Wpisz nazwę kategorii" />
-        <Button Text="Dodaj kategorię" Command="{Binding AddCategoryCommand}" />
-        <Button Text="Anuluj" Command="{Binding CancelCommand}" />
+        <Button Text="Dodaj kategorię" Command="{Binding AddCategoryCommand}" Style="{StaticResource AddButtonStyle}"/>
+        <Button Text="Anuluj" Command="{Binding CancelCommand}" Style="{StaticResource AddButtonStyle}"/>
     </StackLayout> 
 </ContentPage>
