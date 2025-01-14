@@ -7,10 +7,10 @@
         <Entry Placeholder="Nazwa produktu" Text="{Binding Name}" />
         <Entry Placeholder="Ilość" Keyboard="Numeric" Text="{Binding Quantity}" />
 
-        <!-- Wybór jednostki miary -->
+        
         <Picker Title="Jednostka" ItemsSource="{Binding Units}" SelectedItem="{Binding SelectedUnit}" />
 
-        <!-- Wybór kategorii (teraz wyświetlamy pełne obiekty Category, z możliwością wyboru) -->
+        
         <Picker Title="Kategoria" ItemsSource="{Binding Categories}" 
                 ItemDisplayBinding="{Binding Name}" SelectedItem="{Binding SelectedCategory}" />
 
